@@ -13,7 +13,29 @@
   ga('send', 'pageview');
 
 </script>
+    <script>
+        ga('require', 'ecommerce');
+ga('ecommerce:addTransaction', {
 
+ 'id': '1234',                  			 // ID заказа
+ 'affiliation': 'vsechtougodno.github.io',   // Название магазина
+ 'revenue': '1500',             			 // Общая стоимость заказа
+ 'shipping': '250',             			 // Стоимость доставки
+ 'tax': ''                     				 // Налог
+});
+
+// addItem метод вызывается для каждого товара (позиции) в корзине и склеивается с addTransaction по id.
+
+ga('ecommerce:addItem', {
+ 'id': '1234',                    // ID заказа
+ 'name': 'Mouse Logitech',        // Название товара
+ 'sku': 'AAA000',                 // Артикул или SKU
+ 'category': 'Wireless',          // Размер, модель, категория или еще какая-то информация
+ 'price': '750',                  // Стоимость товара
+ 'quantity': '2'                  // Количество товара
+});
+ga('ecommerce:send');             // Отправка данных
+    </script>
 </head>
 
 <body>
