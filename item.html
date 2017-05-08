@@ -13,12 +13,7 @@
   ga('send', 'pageview');
 
 </script>
-<script>
-    function button_buy(hhhh){
-        //alert(hhhh.attributes.href.value);
-        ga('send', 'event', 'button Купить', 'click', hhhh.attributes.href.value);
-    }
-    </script>
+
 </head>
 
 <body>
@@ -60,10 +55,7 @@
     <div id="content">
     <h1>Товар</h1>
 	
-	<div class="social">
-                                <a type="button" href="/cart.html" onclick="button_buy(this)">Купить</a>
-                            </div>
-	
+<button onclick="ga('send', 'event', 'button Купить', 'click');">Купить</button>
 	<!-- <p>
 		<form action=cart.html>
 		<button >Купить</button>
