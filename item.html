@@ -13,7 +13,12 @@
   ga('send', 'pageview');
 
 </script>
-
+<script>
+    function button_buy(hhhh){
+        //alert(hhhh.attributes.href.value);
+        ga('send', 'event', 'button Купить', 'click', hhhh.attributes.href.value);
+    }
+    </script>
 </head>
 
 <body>
@@ -41,6 +46,8 @@
 		</table>
  
     </div>
+	
+	<p class="breadcrumbs">Хлебные крошки: <a href="/">Главная</a> - <a href="/item.html">Список товаров</a> - Товар</p>
          
     <div id="menu_left">
 		<ul>
@@ -52,11 +59,16 @@
          
     <div id="content">
     <h1>Товар</h1>
-	<p>
+	
+	<div class="social">
+                                <a type="button" href="/cart.html" onclick="button_buy(this)">Купить</a>
+                            </div>
+	
+	<!-- <p>
 		<form action=cart.html>
-		<button>Купить</button>
+		<button >Купить</button>
 		</form>
-	</p>
+	</p>!-->
    </div>
          
   	
