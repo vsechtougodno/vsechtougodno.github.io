@@ -13,29 +13,7 @@
   ga('send', 'pageview');
 
 </script>
-    <script>
-        ga('require', 'ec');
-
-
-ga('ec:addProduct', {               // Provide product details in an productFieldObject.
-  'id': 'P12345',                   // Product ID (string).
-  'name': 'item_1', 				// Product name (string).
-  'category': '1',            		// Product category (string).
-  'price': '100',                 // Product price (currency).
-  'quantity': 1                     // Product quantity (number).
-});
-
-
-ga('ec:setAction', 'purchase', {          // Transaction details are provided in an actionFieldObject.
-  'id': 'T12345',                         // (Required) Transaction id (string).
-  'affiliation': 'Moscow', 				  // Affiliation (string).
-  'revenue': '100',                     // Revenue (currency).
-  'tax': '2.85',                          // Tax (currency).
-  'shipping': '5.34',                     // Shipping (currency).
-});
-
-ga('send', 'event', 'eEC', 'purchase');
-    </script>
+    
 </head>
 
 <body>
@@ -73,8 +51,42 @@ ga('send', 'event', 'eEC', 'purchase');
          
     <div id="content">
     <h1>Спасибо!</h1>
+	<p>Номер заказа 222333</p>
+	<ol>
+	<li>
+	Товар 1 --- 500 рублей --- 1 штуки
+	</li>
+	<li>
+	Товар 2 --- 300 рублей --- 1 штука
+	</li>
+	</ol>
    </div>
-         
+   
+ <script>
+        ga('require', 'ec');
+
+
+ga('ec:addProduct', {               // Provide product details in an productFieldObject.
+  'id': '1',                   // Product ID (string).
+  'name': 'Товар 1', 				// Product name (string).
+  'price': '500',                 // Product price (currency).
+});
+
+ga('ec:addProduct', {               // Provide product details in an productFieldObject.
+  'id': '2',                   // Product ID (string).
+  'name': 'Товар 2', 				// Product name (string).
+  'price': '300',                 // Product price (currency).
+});
+
+ga('ec:setAction', 'purchase', {          // Transaction details are provided in an actionFieldObject.
+  'id': '222333',                         // (Required) Transaction id (string).
+  'affiliation': 'Moscow', 				  // Affiliation (string).
+  'revenue': '800',                     // Revenue (currency).
+  
+});
+
+ga('send', 'event', 'eEC', 'purchase');
+    </script>
   	
 </div>
    <!-- Yandex.Metrika counter -->
