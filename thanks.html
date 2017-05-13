@@ -14,27 +14,27 @@
 
 </script>
     <script>
-        ga('require', 'ecommerce');
-ga('ecommerce:addTransaction', {
+        ga('require', 'ec');
 
- 'id': '1234',                  			 // ID заказа
- 'affiliation': 'vsechtougodno.github.io',   // Название магазина
- 'revenue': '1500',             			 // Общая стоимость заказа
- 'shipping': '250',             			 // Стоимость доставки
- 'tax': ''                     				 // Налог
+
+ga('ec:addProduct', {               // Provide product details in an productFieldObject.
+  'id': 'P12345',                   // Product ID (string).
+  'name': 'item_1', 				// Product name (string).
+  'category': '1',            		// Product category (string).
+  'price': '100',                 // Product price (currency).
+  'quantity': 1                     // Product quantity (number).
 });
 
-// addItem метод вызывается для каждого товара (позиции) в корзине и склеивается с addTransaction по id.
 
-ga('ecommerce:addItem', {
- 'id': '1234',                    // ID заказа
- 'name': 'Mouse Logitech',        // Название товара
- 'sku': 'AAA000',                 // Артикул или SKU
- 'category': 'Wireless',          // Размер, модель, категория или еще какая-то информация
- 'price': '750',                  // Стоимость товара
- 'quantity': '2'                  // Количество товара
+ga('ec:setAction', 'purchase', {          // Transaction details are provided in an actionFieldObject.
+  'id': 'T12345',                         // (Required) Transaction id (string).
+  'affiliation': 'Moscow', 				  // Affiliation (string).
+  'revenue': '100',                     // Revenue (currency).
+  'tax': '2.85',                          // Tax (currency).
+  'shipping': '5.34',                     // Shipping (currency).
 });
-ga('ecommerce:send');             // Отправка данных
+
+ga('send', 'event', 'eEC', 'purchase');
     </script>
 </head>
 
